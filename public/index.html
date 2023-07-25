@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            /* height: 100%; */
+            position: fixed;
+            top:0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: forestgreen;
+        }
+        div{
+            display: flex;
+            flex-direction: column;
+            border: 5px solid palegreen;
+            padding: 50px;
+            border-radius: 10px;
+            row-gap: 20px;
+            background-color: white;
+        }
+        input{
+            height: 30px;
+            padding: 10px;
+            border: none;
+            border-bottom: 2px solid green;
+            
+        }
+        input:focus{
+            outline: none;
+        }
+
+        button{
+            height: 30px;
+            background-color: lightgreen;
+            border-radius: 10px;
+            border: 2px solid green;
+            cursor: pointer;
+           }   
+    </style>
+</head>
+<body>
+    <div >
+        <input type="text" id="name" placeholder="Enter Your Name" name="name">
+        <button id="btnLogin">Login</button>
+    </div>
+            <script>
+                (document.getElementById("btnLogin")).addEventListener("click",function(){
+                    var name = document.getElementById("name");
+                    console.log(name.value);
+                    if(name.value === "" || name.value === undefined){
+                        alert("Please Provide Your Name!!!");
+                    }else{
+                        sessionStorage.setItem("username",name.value);
+                        location.assign('index1.html');
+                    }
+                });
+            </script>
+</body>
+</html>
